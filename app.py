@@ -2,7 +2,7 @@ from flask import Flask, request, jsonify
 from flask_cors import CORS  # 🔹 Import CORS
 
 app = Flask(__name__)
-CORS(app)  # 🔹 Enable CORS for all routes
+CORS(app, resources={r"/*": {"origins": "*"}})
 
 notes = [
     {"id": 1, "title": "Sample Note", "content": "This is a sample note", "color": "#FFEB3B"}
